@@ -9,7 +9,7 @@ Redex can be installed through the Python package installer (PyPi). It doesn't h
 pip3 install python-redex
 ```
 
-Next, importing redex is suggested to do as follows.
+Next, importing Redex can be done as follows.
 
 ```python
 import redex as rd
