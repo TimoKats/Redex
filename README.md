@@ -16,11 +16,7 @@ import redex as rd
 ```
 
 ### Usage and examples
-Redex has three main actions: has (returns boolean), find (returns strings/locations/tuples) and count (returns int). For each of these actions, a number of commonly used parameters apply. First, **query** contains the Redex-query. Second, **string** contains the string on which the Redex query is applied. Third, **granularity** (default value is 1) refers to the amount of instancies of a splitting character required to start a new substring to search in. Fourth, **split** (default value is ' ') is the splitting character(s) to create the substrings with.  
-
-Finally, **threads** (deafult value is 2) refers to the amount of threads employed by the system to conduct the search with. Note, setting this parameter requires some knowledge of your CPU (cores/threads). Hence, it's advised to keep this value on default.
-
-As an example, a Redex query that finds all words that start with an uppercase character and contain an hyphen can be formulated as follows.
+Redex has three main actions: has (returns boolean), find (returns strings/locations/tuples) and count (returns int). For example, a Redex query that finds all words that start with an uppercase character and contain an hyphen can be formulated as follows.
 
 ```python
 rd.find('startswith:*upper and contains:-', string)
@@ -43,12 +39,12 @@ A complete tutorial/list of examples can be found in `demo.ipynb` (see files of 
 ### Docs
 This section documents the different components of Redex. Namely, the splitter, the built-in actions, the wildcards and the multi-threaded searching.
 
-##### Split
+#### Split
 The splitter creates subqueries (often words or sentences) to conduct the Redex queries on. By default, this is set to a space (' ') with a granularity of 1. Setting multiple splitting characters can be done through adding a list. For example, adding punctuation to the splitter can be done as follows: `split=['.',',',' ']`. 
 
 Next, the granularity refers to the amount of splitting characters needed to actually split the string in subqueries. By default, this is set to 1 (and it can only be **in**creased). For example, findings substrings where two consecutive words start with an uppercase character can be formulated as follows `rd.find('count:{*upper,2}', string, granularity=2)` 
 
-##### Actions
+#### Actions
 Redex as a number of built-in functionalities that can be used in a boolean expressions/redex query. This subsection is an overview of these functionalities.
 
 | Name                                            | Description                                                                    |
@@ -62,7 +58,7 @@ Redex as a number of built-in functionalities that can be used in a boolean expr
 | location:{*substring*,*location*}               | Return True if substring occurs on location                                    |
 
 
-##### Wildcards
+#### Wildcards
 By default, the substrings can be implemented using the following wildcards. Note, you can add wildcards yourself. For example, say you want to add a wildcard for countries that you can do that as follows: `rd.wildcard['*country'] = ['United States','Canada','United Kingdom']`.
 
 | Name     | Description                |
@@ -76,7 +72,7 @@ By default, the substrings can be implemented using the following wildcards. Not
 | *space   | Any *whitespace*           |
 | *punt    | Any *punctuation*          |
 
-##### Multi-threaded searching
+#### Multi-threaded searching
 The search operations can be executed conurrently. This allows Redex to scale better than regular expressions. However, finding the optimal number of threads can be a tedious process, since it requires knowledge of your CPU (cores/threads). Hence, as a general rule of thumb, don't touch this unless you really know what you're doing.
 
 ```python
