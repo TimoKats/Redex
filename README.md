@@ -40,12 +40,12 @@ A complete tutorial/list of examples can be found in `demo.ipynb` (see files of 
 This section documents the different components of Redex. Namely, the splitter, the built-in actions, the wildcards and the multi-threaded searching.
 
 #### Split
-The splitter creates subqueries (often words or sentences) to conduct the Redex queries on. By default, this is set to a space (' ') with a granularity of 1. Setting multiple splitting characters can be done through adding a list. For example, adding punctuation to the splitter can be done as follows: `split=['.',',',' ']`. 
+The splitter creates subqueries (often words or sentences) to conduct the Redex queries on. By default, this is set to a space (' ') with a granularity of 1. Setting multiple splitting characters can be done through adding a list. For example, adding punctuation: `split=['.',',',' ']`. 
 
 Next, the granularity refers to the amount of splitting characters needed to actually split the string in subqueries. By default, this is set to 1 (and it can only be **in**creased). For example, findings substrings where two consecutive words start with an uppercase character can be formulated as follows `rd.find('count:{*upper,2}', string, granularity=2)` 
 
 #### Actions
-Redex as a number of built-in functionalities that can be used in a boolean expressions/redex query. This subsection is an overview of these functionalities.
+Redex has a number of built-in functionalities that can be used in a boolean expression/Redex query. This subsection gives an overview of these functionalities.
 
 | Name                                            | Description                                                                    |
 |-------------------------------------------------|--------------------------------------------------------------------------------|
