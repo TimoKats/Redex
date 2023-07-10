@@ -1,4 +1,4 @@
-[Redex logo](https://github.com/TimoKats/medium_articles/blob/7b58de57f51e82a9a624feb2eff21aed40a80ceb/img/logo_redex_new.png)
+![Redex logo](https://github.com/TimoKats/medium_articles/blob/af07ef68b66154dda45badd530592cd28296af98/img/RedexLogo.png)
 
 Redex is a Python library that aims to be a readable and scalable replacement of regular expressions (regex). It uses boolean operators and built-in functionalities to create expressions.
 
