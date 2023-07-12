@@ -16,7 +16,7 @@ import redex as rd
 ```
 
 ### Usage and examples
-Redex has three main actions: has (returns boolean), find (returns strings/locations/tuples) and count (returns int). For example, a Redex query that finds all words that start with an uppercase character and contain an hyphen can be formulated as follows.
+Redex has three main actions: has (returns boolean), find (returns list) and count (returns int). For example, a Redex query that finds all words that start with an uppercase character and contain an hyphen can be formulated as follows.
 
 ```python
 rd.find('startswith:*upper and contains:-', string)
